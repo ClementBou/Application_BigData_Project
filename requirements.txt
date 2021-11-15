@@ -1,2 +1,5 @@
-pandas
-sphinx
+pandas==1.3.4
+sphinx==4.0.1
+seaborn==0.11.1
+sklearn
+xgboost==1.3.3

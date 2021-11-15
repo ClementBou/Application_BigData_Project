@@ -136,3 +136,7 @@ dmypy.json
 
 .idea
 .DS_Store
+
+# Models
+*.json
+*.pkl

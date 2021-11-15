@@ -62,6 +62,11 @@ _For the implementation of this project, we decided to use these different softw
 ## Library versions
 
 **Python :** 3.9
+**pandas :** 1.3.4
+**sphinx :** 4.0.1
+**seaborn :** 0.11.1
+**sklearn :** 0.24.1
+**xgboost :** 1.3.3
 
 ## Authors
 
