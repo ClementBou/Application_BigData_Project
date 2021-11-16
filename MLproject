@@ -1,0 +1,11 @@
+# MLproject
+
+name: Application_BigData_Project
+conda_env: conda.yaml
+
+entry_points:
+    main:
+        parameters:
+            num_class: {type: int, default: 2}
+            learning_rate: {type: float, default: 0.1}
+        command: "python main.py {num_class} {learning_rate}"
