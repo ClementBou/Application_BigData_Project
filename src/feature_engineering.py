@@ -15,7 +15,7 @@ def get_revelant_features(dataframe):
 
     cor_target = abs(cor['TARGET'])
 
-    cor_target = cor_target[cor_target > 0.02]
+    cor_target = cor_target[cor_target > 0.03]
     return cor_target
 
 
