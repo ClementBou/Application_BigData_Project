@@ -6,6 +6,8 @@ from sklearn.metrics import log_loss, accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 
+from src.data_interpretation import get_interpretation
+
 
 def train_Xgboost(X_train, y_train):
     """Train a Xgboost model with training dataset.
@@ -62,7 +64,7 @@ def train_Gradient_Boosting(X_train, y_train):
     return model
 
 
-def models_training(models_name, train_data):
+def models_training(models_name, train_data, interpretations):
     """Training of model chosen with training dataset.
 
     :param models_name:  name of the chosen model.
@@ -97,3 +99,6 @@ def models_training(models_name, train_data):
 
         # log metrics
         mlflow.log_metrics({"log_loss": loss, "accuracy": acc})
+
+        # get interpretation
+        get_interpretation(model, X_test, interpretations)
