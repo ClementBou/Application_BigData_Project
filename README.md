@@ -38,7 +38,7 @@ To start the project, it is important to set up the python environment with the 
   
 Run the main. You can change the main to set up models and interpretation that what you want 
 
-![seaborn image](https://github.com/ClementBou/Application_BigData_Project/blob/main/images/main.png?raw=true)
+![seaborn image](https://github.com/ClementBou/Application_BigData_Project/blob/main/images/main.PNG?raw=true)
 
  - models_training - first parameter :  is a list of models that you want to train (model available : **Xgboost**, **Random Forest** and **Gradient Boosting**
  - models_training - third parameter : is a list of interpretation that you want to do (interpretation available : **shap_values_all**, **shap_values_one** and **summary_plot**
@@ -79,7 +79,7 @@ To do this, we decided to create a **Seaborn Correlation Heatmap**
 
  - shap values for all
 
-![seaborn image](https://github.com/ClementBou/Application_BigData_Project/blob/main/images/plot_shapley_values_all.png?raw=true)
+![seaborn image](https://github.com/ClementBou/Application_BigData_Project/blob/main/images/plot_shapley_values_all.PNG?raw=true)
 
  - summary plot
 
