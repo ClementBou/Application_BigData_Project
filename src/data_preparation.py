@@ -5,7 +5,7 @@ def handling_dataframe(dataframe, stable=False):
     """
     return a sample of a cleaned given dataset
     :param stable: boolean to know if the target need to be stable
-    :param dataframe: a data datset to clear
+    :param dataframe: a dataset to clear
     :return: sample of a cleared dataset
     """
     # To heavy dataset so we only use a sub dataset

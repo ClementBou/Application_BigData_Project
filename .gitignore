@@ -140,3 +140,6 @@ dmypy.json
 # Models
 *.json
 *.pkl
+
+# MlFLOW
+/mlruns
