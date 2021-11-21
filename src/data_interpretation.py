@@ -5,6 +5,16 @@ from matplotlib import rcParams
 
 
 def get_interpretation(model, X_test, interpretations):
+    """Get interpretation from model.
+
+    :param model:  trained model.
+    :type model: model.
+    :param X_test: data set to train the model.
+    :type X_test: Pandas Dataframe.
+    :return: interpretations:  list of interpretation that you want
+    :rtype: interpretations : str.
+    :raises: AttributeError, KeyError.
+    """
     shap.initjs()
 
     prepare_model = prepare_model_shap(model)
@@ -14,7 +24,7 @@ def get_interpretation(model, X_test, interpretations):
 
     # Get shap values
     shap_values = explainer.shap_values(X_test)
-    X_test_min = X_test.sample(n=1000, random_state=1);
+    X_test_min = X_test.sample(n=1000, random_state=1)
     shap_values_min = explainer.shap_values(X_test_min)
 
     # Get all features from x_test
@@ -38,6 +48,12 @@ def get_interpretation(model, X_test, interpretations):
             raise ValueError("This interpretation isn't available. Try \"shap_values_all\" or \"shap_values_one\" or \"summary_plot\"")
 
 def prepare_model_shap(model):
+    """Prepare xgboost model to good format.
+
+    :param model:  trained model.
+    :type model: model.
+    """
+
     # Get the underlying xgboost Booster of this model
     mybooster = model.get_booster()
 
