@@ -45,3 +45,8 @@ Data preparation
 .. automodule:: src.predict
    :members:
 
+Data interpretation
+===================
+.. automodule:: src.data_interpretation
+   :members:
+

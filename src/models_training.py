@@ -71,8 +71,8 @@ def models_training(models_name, train_data, interpretations):
     :type models_name: str.
     :param train_data: data set to train the model.
     :type train_data: Pandas Dataframe.
-    :return: model:  trained model.
-    :rtype: model : model.
+    :return: interpretations:  name of the chosen interpretations.
+    :rtype: interpretations : str.
     :raises: AttributeError, KeyError.
     """
 
