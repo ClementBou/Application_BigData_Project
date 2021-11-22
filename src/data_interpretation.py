@@ -20,7 +20,7 @@ def get_interpretation(model, X_test, interpretations):
     prepare_model = prepare_model_shap(model)
 
     # Get explainer
-    explainer = shap.TreeExplainer(prepare_model)
+    explainer = shap.TreeExplainer(model)
 
     # Get shap values
     shap_values = explainer.shap_values(X_test)
@@ -40,10 +40,11 @@ def get_interpretation(model, X_test, interpretations):
             plot_shapley_values = shap.force_plot(explainer.expected_value, shap_values[i], features=X_test.iloc[i], feature_names=all_features,
                                                   show=False, matplotlib=True)
             plot_shapley_values.savefig('plot_shapley_values_i.png', format="png", dpi=150, bbox_inches='tight')
-
         elif interpretation_name == "summary_plot":
-            shap.summary_plot(shap_values_min, features=X_test_min, show=False, max_display=X_test.shape[1])
-            pl.savefig('summary_plot.png')
+            pl.figure()
+            summary_plot = shap.summary_plot(shap_values, features=X_test, show=False, max_display=X_test.shape[1], plot_size=(10, 10))
+            pl.savefig('summary_plot.png', dpi=600)
+            pl.close()
         else:
             raise ValueError("This interpretation isn't available. Try \"shap_values_all\" or \"shap_values_one\" or \"summary_plot\"")
 
